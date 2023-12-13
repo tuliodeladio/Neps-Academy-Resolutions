@@ -4,31 +4,32 @@ using namespace std;
 
 int main()
 {
-    int A, B, C;
+    int T1, T2, T3;
 
-    cin >> A >> B >> C;
+    cin >> T1 >> T2 >> T3;
 
-    if (A > B && B > C)
-    {
-        if (B > C)
-            cout << 3 << 2 << 1 << endl;
-        else
-            cout << 3 << 1 << 2 << endl;
+    if(T1<T2 && T2<T3){
+        cout << 1 << endl << 2 << endl << 3;
     }
-    if (A < B && B > C)
-    {
-        if (A > C)
-            cout << 2 << 3 << 1 << endl;
 
-        else
-            cout << 1 << 3 << 2 << endl;
+    if(T1<T3 && T3<T2){
+        cout << 1 << endl << 3 << endl << 2;
     }
-    else {
-        if (A > B)
-            cout << 2 << 1 << 3 << endl;
 
-        else
-            cout << 1 << 1 << 2 << endl;
+    if(T2<T1 && T1<T3){
+        cout << 2 << endl << 1 << endl << 3;
+    }
+
+    if(T2<T3 && T3<T1){
+        cout << 2 << endl << 3 << endl << 1;
+    }
+
+    if(T3<T1 && T1<T2){
+        cout << 3 << endl << 1 << endl << 2;
+    }
+
+    if(T3<T2 && T2<T1){
+        cout << 3 << endl << 2 << endl << 1;
     }
 
     return 0;
