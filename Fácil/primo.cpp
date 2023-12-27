@@ -1,25 +1,28 @@
 #include <iostream>
-#include <iomanip>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-    int a,r=0;
+    unsigned int a,r=1;
     cin >> a;
+    
+    if (a == 1) {
+        cout << 'N';
+        return 0;
+    }
 
-    for (int i = 1; i <= a; i++)
+    for (unsigned int i = 2; i <= sqrt(a); i++)
     {
         if (a % i == 0)
             r++;
     }
 
-    if (r == 2)
-        cout << "S";
+    if (r == 1)
+        cout << 'S';
     else
-        cout << "N";
-        
-
+        cout << 'N';
         
     return 0;
     
