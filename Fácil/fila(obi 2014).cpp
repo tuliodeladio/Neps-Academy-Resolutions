@@ -1,35 +1,41 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_set>
+#include <map>
+
 
 using namespace std;
 
 int main()
-{
-    int n1,n2,a;
-    cin >> n1;
-    int fila[n1];
-    
-    for (int i = 0; i < n1; i++)
-        cin >> fila[i];
+{   
 
-    cin >> n2;
-    int saiu[n2];
+    map<int,bool> excluidos;
+    int n,m;
 
-    for (int i = 0; i < n2; i++)
-        cin >> saiu[i];
+    cin >> n;
+    int fila[n];
 
-    for (int i = 0; i < n1; i++) {
-        for (int j = 0; j < n2; j++){
-            if (fila[i] == saiu[j]) {
-                fila[i] = -1;
-                break;
-            }
-        }
+    for (int& i : fila)
+        cin >> i;
+
+
+    cin >> m;
+    for (size_t i = 0; i < m; i++)
+    {
+        int excluido;
+        cin >> excluido;
+        excluidos.insert({excluido,true});
     }
     
-    for (int i = 0; i < n1; i++) {
-        if (fila[i] != -1)
-            cout << fila[i] << " ";
+
+    for (int i : fila) {
+        if (!excluidos[i])
+            cout << i << ' ';
     }
+
+
+
 
 
     return 0;
